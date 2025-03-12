@@ -1,2 +1,179 @@
 # Happy-birthday-trauma-
 A personalized birthday surprise website for my loved one
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Initial Page -->
+    <div class="page" id="initialPage">
+        <div class="question">
+            <img src="lamine-yamal.png" alt="Lamine Yamal" class="footballer">
+            <p>Is it your birthday?</p>
+        </div>
+        <button onclick="answerYes()">Yes</button>
+    </div>
+
+    <!-- Personalized Birthday Message Page -->
+    <div class="page hidden" id="birthdayMessage">
+        <div class="footballField">
+            <p>Yayyy! Let’s goooooo!</p>
+            <p>Happy birthday, my fan! I wish you a very very happy birthday. Hope you have a great day ahead and may you achieve everything you have ever wished for.</p>
+            <img src="messi.png" alt="Messi" class="footballer">
+        </div>
+        <button onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Do you want something more? Page -->
+    <div class="page hidden" id="morePage">
+        <p>Do you want something more?</p>
+        <button onclick="showMore()">Yes</button>
+    </div>
+
+    <!-- Final Birthday Message Page -->
+    <div class="page hidden" id="finalPage">
+        <div class="popupBox">
+            <p>Happy 22nd Birthday, my baby! Love you so much! Trying my best to make your birthday special. Hope you enjoy it!</p>
+        </div>
+        <button onclick="thankYouPage()">Thank You</button>
+    </div>
+
+    <!-- Thank You Page -->
+    <div class="page hidden" id="thankYouPage">
+        <div class="coupleImage">
+            <p>Have a great day ahead, baby! Love you!</p>
+            <img src="couple-holding-hands.png" alt="Couple holding hands">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    display: none;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Background styles */
+.footballField {
+    background-image: url('football-ground.jpg');
+    background-size: cover;
+    padding: 50px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Pop-up box */
+.popupBox {
+    background-color: pink;
+    border: 3px solid #e91e63;
+    padding: 20px;
+    margin: 30px auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    animation: bounceIn 1s;
+}
+
+/* Animation */
+@keyframes bounceIn {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+button {
+    padding: 15px 30px;
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #c2185b;
+}
+
+/* Footballer Images */
+.footballer {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Couple Image */
+.coupleImage img {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+/* Hearts and Popper Animations */
+@keyframes heartsPop {
+    0% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(0); }
+}
+
+.hearts {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    font-size: 40px;
+    animation: heartsPop 1s infinite;
+}
+
+/* Additional custom styles can be added */
+
+// Functions for page navigation
+function answerYes() {
+    document.getElementById('initialPage').classList.add('hidden');
+    document.getElementById('birthdayMessage').classList.remove('hidden');
+}
+
+function nextPage() {
+    document.getElementById('birthdayMessage').classList.add('hidden');
+    document.getElementById('morePage').classList.remove('hidden');
+}
+
+function showMore() {
+    document.getElementById('morePage').classList.add('hidden');
+    document.getElementById('finalPage').classList.remove('hidden');
+
+    // Create hearts and poppers effect
+    let heart = document.createElement('div');
+    heart.classList.add('hearts');
+    heart.innerHTML = '❤️';
+    document.body.appendChild(heart);
+
+    // Add other animations (confetti, cakes, etc.) using similar techniques.
+}
+
+function thankYouPage() {
+    document.getElementById('finalPage').classList.add('hidden');
+    document.getElementById('thankYouPage').classList.remove('hidden');
+}
+
+// Show the initial page when the website loads
+window.onload = function() {
+    document.getElementById('initialPage').classList.remove('hidden');
+};
