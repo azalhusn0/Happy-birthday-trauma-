@@ -1,0 +1,90 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.page {
+    display: none;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Background styles */
+.footballField {
+    background-image: url('football-ground.jpg');
+    background-size: cover;
+    padding: 50px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Pop-up box */
+.popupBox {
+    background-color: pink;
+    border: 3px solid #e91e63;
+    padding: 20px;
+    margin: 30px auto;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    animation: bounceIn 1s;
+}
+
+/* Animation */
+@keyframes bounceIn {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+button {
+    padding: 15px 30px;
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #c2185b;
+}
+
+/* Footballer Images */
+.footballer {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Couple Image */
+.coupleImage img {
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+}
+
+/* Hearts and Popper Animations */
+@keyframes heartsPop {
+    0% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(0); }
+}
+
+.hearts {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    font-size: 40px;
+    animation: heartsPop 1s infinite;
+}
+
+/* Additional custom styles can be added */

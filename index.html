@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Initial Page -->
+    <div class="page" id="initialPage">
+        <div class="question">
+            <img src="lamine-yamal.png" alt="Lamine Yamal" class="footballer">
+            <p>Is it your birthday?</p>
+        </div>
+        <button onclick="answerYes()">Yes</button>
+    </div>
+
+    <!-- Personalized Birthday Message Page -->
+    <div class="page hidden" id="birthdayMessage">
+        <div class="footballField">
+            <p>Yayyy! Let’s goooooo!</p>
+            <p>Happy birthday, my fan! I wish you a very very happy birthday. Hope you have a great day ahead and may you achieve everything you have ever wished for.</p>
+            <img src="messi.png" alt="Messi" class="footballer">
+        </div>
+        <button onclick="nextPage()">Next</button>
+    </div>
+
+    <!-- Do you want something more? Page -->
+    <div class="page hidden" id="morePage">
+        <p>Do you want something more?</p>
+        <button onclick="showMore()">Yes</button>
+    </div>
+
+    <!-- Final Birthday Message Page -->
+    <div class="page hidden" id="finalPage">
+        <div class="popupBox">
+            <p>Happy 22nd Birthday, my baby! Love you so much! Trying my best to make your birthday special. Hope you enjoy it!</p>
+        </div>
+        <button onclick="thankYouPage()">Thank You</button>
+    </div>
+
+    <!-- Thank You Page -->
+    <div class="page hidden" id="thankYouPage">
+        <div class="coupleImage">
+            <p>Have a great day ahead, baby! Love you!</p>
+            <img src="couple-holding-hands.png" alt="Couple holding hands">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
